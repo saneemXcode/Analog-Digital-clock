@@ -1,8 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
 }
 body{
     display: flex;
@@ -12,65 +12,58 @@ body{
     background: #acbaca;
 }
 .clock{
-     position: relative;
+    position: relative;
     width: 450px;
     height: 550px;
     display: flex;
-     justify-content: center; 
+    justify-content: center;
     align-items: center;
     background: #c9d5e0;
     border-radius: 50px;
     border-top-left-radius: 250px;
     border-top-right-radius: 250px;
-    box-shadow: 45px 45px 45px -15px rgba(0,0,0,0.15),
-    inset 15px 15px 10px rgba(255,255,255,0.75),
-    -15px -15px 35px rgba(255,255,255,0.55),
-    inset -2px -2px 15px rgba(0,0,0,0.2);
-
+    box-shadow: 45px 45px 45px -15px rgba(0,0,0,0.15),inset 15px 15px 10px rgba(255,255,255,0.75),-15px -15px 35px rgba(255,255,255,0.55),inset -2px -2px 15px rgba(0,0,0,0.2);
 }
-.number{
-     position: absolute;
-     top: 30px;
-     width: 390px;
-     height: 390px;
-     background: #152b4a;
-     border-radius: 50%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     box-shadow: 7px 7px 22px #152b4a66 ,
-     inset 7px 7px 7px rgba(255,255,255,0.55),
-     -9px -9px 15px rgba(255, 255, 255, 1);
+ .numbers{
+    position: absolute;
+    width: 390px;
+    height: 390px;
+    background: #152b4a;
+    border-radius: 50%;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 7px 7px 22px #152b4a66,inset 7px 7px 7px rgba(255,255,255,0.55),
+    -9px -9px 15px rgba(255,255,255,1);
 }
-.number::before{
+.numbers::before{
     content: '';
     position: absolute;
     width: 4px;
     height: 4px;
     border-radius: 50%;
     background: #e91e63;
-     z-index: 100000;
-     box-shadow:  
-     0 0 0 1px #e91e63,
-     0 0  0 3px #fff,
-     0 0 5px 5px rgba(0,0,0,0.15);
- 
-}
-.number span{
-    position: absolute;
-     inset: 15px;
-     text-align: center;
-     color: #fff;
-     font-size: 1.25rem;
-     transform: rotate(calc(30deg*var(--i)));
+    z-index: 1;
+    box-shadow: 0 0 0 1px #e91e63,
+    0 0 0 3px #fff,
+    0 0 5px 5px rgba(0,0,0,0.15);
 
 }
-.number span b{
+.numbers span{
+    position: absolute;
+    inset: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.25em;
+    transform: rotate(calc(30deg * var(--i)));
+}
+.numbers span b{
     font-weight: 400;
     display: inline-block;
-    transform: rotate(calc(-30deg*var(--i)));
-}
-.number .circle{
+    transform: rotate(calc(-30deg * var(--i)));
+}  
+.numbers .circle{
     position: absolute;
     width: 280px;
     height: 280px;
@@ -81,163 +74,151 @@ body{
     align-items: flex-start;
     z-index: 10;
 }
-.number .circle i{
+.numbers .circle i{
     position: absolute;
     width: 6px;
     height: 50%;
-    opacity: 0.80;
     background: var(--clr);
+    opacity: 0.75;
     transform-origin: bottom;
     transform: scaleY(0.5);
-
 }
-.number .circle#sec i{
-    width: 2px;
-
+.numbers .circle#sec i{
+   width: 2px;
 }
-.number .circle#min i{
+.numbers .circle#min i{
     width: 4px;
-
-}
-.number .circle#hrs i{
-    width: 2px;
-
-}
-.number .circle#min {
-    width: 230px;
-   height: 230px;
-}
-.number .circle#hrs {
+ }
+ 
+ .numbers .circle#min{
+    width: 240px;
+    height: 230px;
+ }
+ .numbers .circle#hrs{
     width: 180px;
-   height: 180px;
-}
-.number .circle::before{
+    height: 180px;
+ }
+ .numbers .circle::before{
     content: '';
     position: absolute;
-    top: -6px;
-    left: 50%;
     width: 10px;
     height: 10px;
-    border-radius: 50%;
     background: var(--clr);
+    border-radius: 50%;
+    top: -6px;
+    left: 50%;
     transform: translateX(-50%);
-    box-shadow:  
-    0px 0px 20px var(--clr),
+    box-shadow: 0 0 20px var(--clr),
     0 0 60px var(--clr);
- 
-}
-#time{
+ }
+ #time{
     position: absolute;
     bottom: 35px;
     display: flex;
-    padding: 10px 10px;
-    font-size: 2rem;
+    padding: 10px 20px;
+    font-size: 2em;
     font-weight: 600;
     border-radius: 40px;
-    background-color: #152b4a;
-    box-shadow: 7px 7px 22px #152b4a66 ,
-    inset 7px 7px 7px rgba(255,255,255,0.55),
-    -9px -9px 15px rgba(255, 255, 255, 1);
-}
-#time div{
+    background: #152b4a;
+    box-shadow: 7px 7px 22px #152b4a66,inset 7px 7px 7px rgba(255,255,255,0.55),
+    -9px -9px 15px rgba(255,255,255,1);
+ }
+ #time div{
     position: relative;
     width: 60px;
     text-align: center;
-     color: var(--clr);
-     opacity: 0.80;
-}
-#time div:last-child{
-    font-size: 0.7em;
+    color: var(--clr);
+    opacity: 0.75;
+ }
+ #time div:last-child{
+    font-size: 0.5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
-    color: white;
-
-}
-#time div:nth-child(1)::after,
-#time div:nth-child(2)::after{
+    font-weight: 500;
+ }
+ #time div:nth-child(1)::after,
+ #time div:nth-child(2)::after{
     content: ':';
     position: absolute;
     right: -4px;
-}
-#time div:nth-child(2)::after{
+ }
+ #time div:nth-child(2)::after{
     animation: animate 1s steps(1) infinite;
-}
-@keyframes animate {
+ }
+ @keyframes animate{
     0%{
         opacity: 1;
     }
     50%{
         opacity: 0;
     }
-}
-@media only screen and (max-width:600px){
+ }
+
+ /* css  for small screen  */
+ @media only screen and (max-width:600px){
     .clock{
         position: relative;
         width: 250px;
         height: 300px;
-        display: flex;
+        /* display: flex;
         justify-content: center;
         align-items: center;
         background: #c9d5e0;
         border-radius: 50px;
         border-top-left-radius: 250px;
-        border-top-right-radius: 250px;
+        border-top-right-radius: 250px; */
         box-shadow: 45px 45px 45px -15px rgba(0,0,0,0.15),inset 15px 15px 10px rgba(255,255,255,0.75),-15px -15px 35px rgba(255,255,255,0.55),inset -2px -2px 15px rgba(0,0,0,0.2);
     }
     .numbers{
         position: absolute;
         width: 190px;
         height: 190px;
-        background: #152b4a;
-        border-radius: 50%;
+        /* background: #152b4a;
+        border-radius: 50%; */
         top: 30px;
-        display: flex;
+        /* display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
         box-shadow: 7px 7px 22px #152b4a66,inset 7px 7px 7px rgba(255,255,255,0.55),
         -9px -9px 15px rgba(255,255,255,1);
     }
     .numbers::before{
-        content: '';
-        position: absolute;
+        /* content: '';
+        position: absolute; */
         width: 2px;
         height: 2px;
         border-radius: 50%;
-        background: #e91e63;
-        z-index: 1;
+        /* background: #e91e63;
+        z-index: 1; */
         box-shadow: 0 0 0 1px #e91e63,
         0 0 0 2px #fff,
         0 0 4px 4px rgba(0,0,0,0.15); 
     }
     .numbers .circle{
         position: absolute;
-        width: 110px;
-        height: 110px;
-        border: 1px solid rgba(0,0,0,0.75);
+        width: 120px;
+        height: 120px;
+        /* border: 1px solid rgba(0,0,0,0.75);
         border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        z-index: 10;
+        displ`
     }
     .numbers .circle#min{
-        width: 85px;
-        height: 85px; 
+        width: 95px;
+        height: 95px; 
      }
      .numbers .circle#hrs{
-         width: 65px;
-        height: 65px; 
+         width: 70px;
+        height: 70px; 
      }
      .numbers .circle i{
         position: absolute;
         width: 4px;
         height: 50%;
-        background: var(--clr);
+        /* background: var(--clr);
         opacity: 0.75;
         transform-origin: bottom;
-        transform: scaleY(0.5);
+        transform: scaleY(0.5); */
     }
     .numbers .circle#sec i{
        width: 2px;
@@ -247,11 +228,11 @@ body{
      }
      .numbers span{
         position: absolute;
-        inset: 10px;
+        /* inset: 10px;
         text-align: center;
-        color: #fff;
+        color: #fff; */
         font-size: 1em;
-        transform: rotate(calc(30deg * var(--i)));
+        /* transform: rotate(calc(30deg * var(--i))); */
     }
     .numbers span b{
         font-weight: 250;
@@ -259,35 +240,36 @@ body{
         transform: rotate(calc(-30deg * var(--i)));
     }  
     .numbers .circle::before{
-        content: '';
-        position: absolute;
-        width: 5px;
+        /* content: '';
+        position: absolute;*/
+        width: 5px; 
         height: 5px;
-        background: var(--clr);
-        border-radius: 50%;
+        /* background: var(--clr);
+        border-radius: 50%; */
         top: -6px;
-        left: 50%;
-        transform: translateX(-50%);
+        /* left: 50%;
+        transform: translateX(-50%); */
         box-shadow: 0 0 20px var(--clr),
         0 0 60px var(--clr);
      }
     /* digital css  */
     #time{
-        position: absolute;
+        /* position: absolute; */
         bottom: 35px;
         display: flex;
         padding: 5px 10px;
-        font-size: 1.10em;
-        font-weight: 400;
-        border-radius: 40px;
-        background: #152b4a;
+        font-size: 1.25em;
+        font-weight: 500;
+        /* border-radius: 40px;
+        background: #152b4a; */
          box-shadow: 6px 6px 18px #152b4a66,inset 6px 6px 6px rgba(255,255,255,0.55),
         -3px -3px 5px rgba(255,255,255,1); 
      }
      #time div{
         position: relative;
         width: 30px;
+        text-align: center;
+        color: var(--clr);
         opacity: 0.75;
      }
  }
-    
