@@ -175,8 +175,8 @@ body{
 @media only screen and (max-width:600px){
     .clock{
         position: relative;
-       width: 400px;
-       height: 500px;
+       width: 375px;
+       height: 490px;
        display: flex;
         justify-content: center; 
        align-items: center;
@@ -192,9 +192,9 @@ body{
    }
    .number{
     position: absolute;
-    top: 30px;
-    width: 360px;
-    height: 360px;
+    top: 34px;
+    width: 315px;
+    height: 315px;
     background: #152b4a;
     border-radius: 50%;
     display: flex;
@@ -206,8 +206,8 @@ body{
 }
 .number .circle{
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 225px;
+    height: 225px;
     border: 1px solid rgba(0,0,0,0.75);
     border-radius: 50%;
     display: flex;
@@ -224,6 +224,14 @@ body{
     transform-origin: bottom;
     transform: scaleY(0.5);
 
+}
+.number .circle#min {
+    width: 202px;
+   height: 202px;
+}
+.number .circle#hrs {
+    width: 165px;
+   height: 165px;
 }
     
 }
